@@ -399,19 +399,43 @@
 			
 			
 			<!-- Start Video Area -->
-			<section class="video-area pt-40 pb-40">
-				<div class="overlay overlay-bg"></div>
-				<div class="container">
-					<div class="video-content">
-						<a href="https://youtu.be/PcjWnP5jq0E?si=_q8WGLOUu2cwA84u" class="play-btn"><img src="img/play-btn.png" alt=""></a>
-						<div class="video-desc">
-							<h3 class="h2 text-white text-uppercase">Ser unicos es una preferencia</h3>
-							<h4 class="text-white">Un video de Youtube aparacera al dar click</h4>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- Start Video Area -->
+<section class="video-area pt-40 pb-40">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="video-content">
+            <!-- Botón de Reproducción -->
+            <a href="javascript:void(0);" class="play-btn" onclick="loadVideo()">
+                <img src="img/play-btn.png" alt="Play Button">
+            </a>
+
+            <!-- Contenedor del video que se mostrará después de hacer clic -->
+            <div id="videoContainer" style="display: none;">
+                <iframe id="videoIframe" width="560" height="315" 
+                    src="https://www.youtube.com/embed/PcjWnP5jq0E?si=NPEj7RyTUsMTc5SU" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="video-desc">
+                <h3 class="h2 text-white text-uppercase">Ser únicos es una preferencia</h3>
+                <h4 class="text-white">Un video de YouTube aparecerá aquí al hacer clic, despues, de click de nuevo para que se muestre</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Video Area -->
+
+<script>
+    function loadVideo() {
+        // Mostrar el contenedor del video y ocultar el botón de reproducción
+        document.querySelector('.play-btn').style.display = 'none';
+        document.getElementById('videoContainer').style.display = 'block';
+    }
+</script>
+
 			
 			
 			<!-- Start logo Area -->
